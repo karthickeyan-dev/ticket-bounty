@@ -1,4 +1,5 @@
 import { initialTickets } from '@/data';
+import { ticketPath } from '@/paths';
 import Link from 'next/link';
 
 export default function TicketsPage() {
@@ -8,7 +9,7 @@ export default function TicketsPage() {
       <ul className="flex gap-2">
         {initialTickets.map(ticket => (
           <li key={ticket.id}>
-            <Link href={`tickets/${ticket.id}`} className="underline">
+            <Link href={ticketPath(ticket.id)} className="underline">
               {ticket.title}
             </Link>
           </li>
