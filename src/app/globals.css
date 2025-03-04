@@ -3,6 +3,19 @@
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* NOTE custom animation for tickets list */
+  --animate-fade-in-from-top: fade-in-from-top 0.5s ease-out;
+  @keyframes fade-in-from-top {
+    0% {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 }
 
 :root {
