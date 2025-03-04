@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { homePath, ticketsPath } from "@/paths";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -18,12 +19,15 @@ export default function RootLayout({
       <body className="font-inter">
         <nav className="bg-background/60 fixed top-0 right-0 left-0 z-20 flex w-full justify-between border-b px-5 py-2.5 backdrop-blur">
           <div>
-            <Link className="text-lg font-bold" href={homePath()}>
-              Home
-            </Link>
+            <Button asChild variant="outline">
+              <Link href={homePath()}>Home</Link>
+            </Button>
           </div>
           <div>
-            <Link className="text-sm underline" href={ticketsPath()}>
+            <Link
+              href={ticketsPath()}
+              className={buttonVariants({ variant: "outline" })}
+            >
               Tickets
             </Link>
           </div>
