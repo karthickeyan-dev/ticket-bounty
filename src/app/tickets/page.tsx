@@ -1,8 +1,16 @@
+import { buttonVariants } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { initialTickets } from "@/data";
 import { ticketPath } from "@/paths";
-import Link from "next/link";
 import clsx from "clsx";
 import { Check, File, Pencil } from "lucide-react";
+import Link from "next/link";
 
 const TICKET_ICONS = {
   OPEN: <File />,
@@ -21,23 +29,27 @@ export default function TicketsPage() {
       </div>
       <div className="animate-fade-in-from-top flex flex-1 flex-col items-center gap-y-4">
         {initialTickets.map((ticket) => (
-          <div
-            key={ticket.id}
-            className="w-full max-w-md rounded border border-slate-100 p-4"
-          >
-            <div>{TICKET_ICONS[ticket.status]}</div>
-            <h3 className="truncate text-lg font-semibold">{ticket.title}</h3>
-            <p
-              className={clsx("truncate text-sm text-neutral-500", {
-                "line-through": ticket.status === "DONE",
-              })}
-            >
-              {ticket.content}
-            </p>
-            <Link href={ticketPath(ticket.id)} className="text-sm underline">
-              view
-            </Link>
-          </div>
+          <Card key={ticket.id} className="w-full max-w-md">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-x-2">
+                <span>{TICKET_ICONS[ticket.status]}</span>
+                <h3 className="truncate">{ticket.title}</h3>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <span className="line-clamp-3 whitespace-break-spaces">
+                {ticket.content}
+              </span>
+            </CardContent>
+            <CardFooter>
+              <Link
+                href={ticketPath(ticket.id)}
+                className={buttonVariants({ variant: "link" })}
+              >
+                view
+              </Link>
+            </CardFooter>
+          </Card>
         ))}
       </div>
     </div>
