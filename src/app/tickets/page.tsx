@@ -1,22 +1,6 @@
 import { Heading } from "@/components/Heading";
-import { buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { initialTickets } from "@/data";
-import { ticketPath } from "@/paths";
-import { LucideCheck, LucideFile, LucidePencil } from "lucide-react";
-import Link from "next/link";
-
-const TICKET_ICONS = {
-  OPEN: <LucideFile />,
-  DONE: <LucideCheck />,
-  IN_PROGRESS: <LucidePencil />,
-};
+import { TicketItem } from "@/features/ticket/components/TicketItem";
 
 export default function TicketsPage() {
   return (
@@ -27,27 +11,7 @@ export default function TicketsPage() {
       />
       <div className="animate-fade-in-from-top flex flex-1 flex-col items-center gap-y-4">
         {initialTickets.map((ticket) => (
-          <Card key={ticket.id} className="w-full max-w-md">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-x-2">
-                <span>{TICKET_ICONS[ticket.status]}</span>
-                <h3 className="truncate">{ticket.title}</h3>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <span className="line-clamp-3 whitespace-break-spaces">
-                {ticket.content}
-              </span>
-            </CardContent>
-            <CardFooter>
-              <Link
-                href={ticketPath(ticket.id)}
-                className={buttonVariants({ variant: "link" })}
-              >
-                view
-              </Link>
-            </CardFooter>
-          </Card>
+          <TicketItem key={ticket.id} ticket={ticket} />
         ))}
       </div>
     </div>
