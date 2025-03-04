@@ -9,13 +9,13 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { initialTickets } from "@/data";
 import { ticketPath } from "@/paths";
-import { Check, File, Pencil } from "lucide-react";
+import { LucideCheck, LucideFile, LucidePencil } from "lucide-react";
 import Link from "next/link";
 
 const TICKET_ICONS = {
-  OPEN: <File />,
-  DONE: <Check />,
-  IN_PROGRESS: <Pencil />,
+  OPEN: <LucideFile />,
+  DONE: <LucideCheck />,
+  IN_PROGRESS: <LucidePencil />,
 };
 
 export default function TicketsPage() {
