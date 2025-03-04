@@ -22,7 +22,7 @@ export default function RootLayout({
           <div>
             <Button asChild variant="ghost">
               <Link href={homePath()}>
-                <LucideTicketCheck />
+                <LucideTicketCheck className="size-6" />
                 <h1 className="text-lg font-bold">TicketBounty</h1>
               </Link>
             </Button>
