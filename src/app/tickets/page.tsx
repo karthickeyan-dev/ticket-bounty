@@ -6,9 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { initialTickets } from "@/data";
 import { ticketPath } from "@/paths";
-import clsx from "clsx";
 import { Check, File, Pencil } from "lucide-react";
 import Link from "next/link";
 
@@ -27,6 +27,7 @@ export default function TicketsPage() {
           All your tickets in one place
         </p>
       </div>
+      <Separator />
       <div className="animate-fade-in-from-top flex flex-1 flex-col items-center gap-y-4">
         {initialTickets.map((ticket) => (
           <Card key={ticket.id} className="w-full max-w-md">
