@@ -1,10 +1,7 @@
 import "@/app/globals.css";
 import { Header } from "@/components/Header";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { homePath, ticketsPath } from "@/paths";
-import { LucideTicketCheck } from "lucide-react";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Ticket Bounty",
@@ -17,12 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="font-inter">
-        <Header />
-        <main className="bg-secondary/20 flex min-h-screen flex-1 flex-col overflow-x-hidden overflow-y-auto px-8 py-24">
-          {children}
-        </main>
+        <ThemeProvider>
+          <Header />
+          <main className="bg-secondary/20 mx-auto flex min-h-screen max-w-3xl flex-1 flex-col overflow-x-hidden overflow-y-auto px-8 py-24">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
