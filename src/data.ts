@@ -1,11 +1,11 @@
-type InitialTickets = {
+type Ticket = {
   id: number;
   title: string;
   content: string;
   status: "OPEN" | "DONE" | "IN_PROGRESS";
 };
 
-export const initialTickets: InitialTickets[] = [
+export const initialTickets: Ticket[] = [
   {
     id: 1,
     title: "Ticket 1",

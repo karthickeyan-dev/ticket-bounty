@@ -7,7 +7,7 @@ type PlaceholderProps = {
   button?: JSX.Element | null;
 };
 
-function Placeholder({
+export default function Placeholder({
   label,
   icon = <LucideTriangleAlert />,
   button = null,
@@ -22,5 +22,3 @@ function Placeholder({
     </div>
   );
 }
-
-export { Placeholder };

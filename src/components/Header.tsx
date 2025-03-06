@@ -19,7 +19,7 @@ function Header() {
         <ThemeToggle />
         <Link
           href={ticketsPath()}
-          className={buttonVariants({ variant: "outline" })}
+          className={buttonVariants({ variant: "default" })}
         >
           Tickets
         </Link>
