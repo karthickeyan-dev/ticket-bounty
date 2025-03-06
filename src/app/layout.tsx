@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="font-inter">
         <ThemeProvider>
           <Header />
-          <main className="bg-secondary/20 mx-auto flex min-h-screen max-w-3xl flex-1 flex-col overflow-x-hidden overflow-y-auto px-8 py-24">
+          <main className="bg-secondary/20 mx-auto flex min-h-screen flex-1 flex-col overflow-x-hidden overflow-y-auto px-8 py-24">
             {children}
           </main>
         </ThemeProvider>
