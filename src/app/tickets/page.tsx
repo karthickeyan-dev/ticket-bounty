@@ -3,6 +3,12 @@ import Spinner from "@/components/Spinner";
 import TicketList from "@/features/ticket/components/TicketList";
 import { Suspense } from "react";
 
+// NOTE - force dynamic
+// export const dynamic = "force-dynamic";
+
+// NOTE - revalidate every 30s
+// export const revalidate = 30;
+
 export default function TicketsPage() {
   return (
     <div className="flex flex-1 flex-col gap-y-8">
