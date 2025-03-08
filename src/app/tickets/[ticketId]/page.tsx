@@ -6,6 +6,12 @@ type TicketPageProps = {
   params: Promise<{ ticketId: string }>;
 };
 
+// NOTE - SSR using static params
+// export async function generateStaticParams() {
+//   const tickets = await getTickets();
+//   return tickets.map((ticket) => ticket.id);
+// }
+
 export default async function TicketPage({ params }: TicketPageProps) {
   const { ticketId } = await params;
   const ticket = await getTicket(ticketId);

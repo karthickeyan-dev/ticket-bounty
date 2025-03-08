@@ -6,7 +6,7 @@ import { Suspense } from "react";
 // NOTE - force dynamic
 // export const dynamic = "force-dynamic";
 
-// NOTE - revalidate every 30s
+// NOTE - revalidate every n seconds
 // export const revalidate = 30;
 
 export default function TicketsPage() {
