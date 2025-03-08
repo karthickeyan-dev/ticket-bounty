@@ -17,7 +17,7 @@ function TicketItem({ ticket, isDetail = false }: TicketItemProps) {
   function DetailButton() {
     return (
       <Button asChild variant="outline" size="icon">
-        <Link href={ticketPath(ticket.id)}>
+        <Link prefetch href={ticketPath(ticket.id)}>
           <LucideSquareArrowOutUpRight />
         </Link>
       </Button>
