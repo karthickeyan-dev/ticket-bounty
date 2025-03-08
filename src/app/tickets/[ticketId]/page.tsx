@@ -3,13 +3,12 @@ import { getTicket } from "@/features/ticket/queries/getTicket";
 import { notFound } from "next/navigation";
 
 type TicketPageProps = {
-  // params: Promise<{ ticketId: string }>;
-  params: { ticketId: string };
+  params: Promise<{ ticketId: string }>;
 };
 
 export default async function TicketPage({ params }: TicketPageProps) {
-  // const { ticketId } = await params;
-  const ticket = await getTicket(params.ticketId);
+  const { ticketId } = await params;
+  const ticket = await getTicket(ticketId);
 
   if (!ticket) notFound();
 
